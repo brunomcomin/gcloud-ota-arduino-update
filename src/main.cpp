@@ -172,7 +172,7 @@ void setup()
 {
   Serial.begin(115200);
   Serial.setDebugOutput(true);  
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(2, OUTPUT);
 
   delay(3000);
   Serial.println("\n Starting");
@@ -217,13 +217,7 @@ unsigned long previousMillis = 0;
 void loop()
 {
 
-  unsigned long currentMillis = millis();
-
-  if (currentMillis - previousMillis >= interval) {    
-    previousMillis = currentMillis;
-    ledState = ledState == LOW ? HIGH : LOW;
-    digitalWrite( BUILTIN_LED, ledState );
-  }
+ 
   
   // Just chill
   server.handleClient();
