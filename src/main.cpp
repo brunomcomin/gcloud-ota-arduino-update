@@ -216,7 +216,13 @@ unsigned long previousMillis = 0;
 
 void loop()
 {
+    unsigned long currentMillis = millis();
 
+  if (currentMillis - previousMillis >= interval) {    
+    previousMillis = currentMillis;
+    ledState = ledState == LOW ? HIGH : LOW;
+    digitalWrite( 2, ledState );
+  }
  
   
   // Just chill
