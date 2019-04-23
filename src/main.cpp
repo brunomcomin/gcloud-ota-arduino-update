@@ -95,7 +95,7 @@ bool downloadUpdate(String url)
     {
 
       int contentLength = http.getSize();
-      USE_SERIAL.println("contentLength : " + String(contentLength));
+      USE_SERIAL.println("contentLength : " + String(contentLength)); //TA PARANDO AQUI
 
       if (contentLength > 0)
       {
@@ -211,7 +211,7 @@ void setup()
 }
 
 int ledState = LOW;
-const long interval = 1000;
+const long interval = 100;
 unsigned long previousMillis = 0;
 
 void loop()
